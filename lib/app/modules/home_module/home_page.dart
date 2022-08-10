@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+  final categories = [
+    {"title": "Dentist"},
+    {"title": "Heart Surgeon"},
+    {"title": "Optician"},
+    {"title": "Doctor"}
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SafeArea(
           child: Column(
             children: [
@@ -17,11 +23,18 @@ class HomePage extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                          margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.person)),
+                          margin: const EdgeInsets.only(right: 10),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(70),
+                              child: Image.asset(
+                                "assets/img/doctor1.jpg",
+                                fit: BoxFit.fill,
+                                height: 40,
+                                width: 40,
+                              ))),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text("Welcome back"),
                           Text(
                             "Nazmul",
@@ -31,8 +44,17 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.add_chart_outlined))
+                  Container(
+                    decoration: ShapeDecoration(
+                        color: Colors.grey.shade200,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                          Radius.circular(8),
+                        ))),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.add_chart_outlined)),
+                  )
                 ],
               ),
               const SizedBox(
@@ -164,12 +186,12 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-            const   SizedBox(
-                height: 12.0,
+              const SizedBox(
+                height: 20.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:const  [
+                children: const [
                   Text(
                     "Category",
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -178,6 +200,54 @@ class HomePage extends StatelessWidget {
                     "See all",
                     style: TextStyle(color: Colors.grey),
                   ),
+                ],
+              ),
+
+              ///list view that scrolls horizontally
+              SizedBox(
+                height: 50,
+                child: ListView.builder(
+                    itemCount: categories.length,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemBuilder: (ctx, int index) {
+                      return Container(
+                        padding: const EdgeInsets.all(7),
+                        margin: const EdgeInsets.all(4),
+                        decoration: ShapeDecoration(
+                            color: Colors.grey.shade200,
+                            shape: const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8)))),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.monitor_heart,
+                              color: Colors.red,
+                            ),
+                            const SizedBox(
+                              width: 2,
+                            ),
+                            Text("${categories[index]["title"]}")
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "Top Rated Doctors",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "See all",
+                    style: TextStyle(color: Colors.grey),
+                  )
                 ],
               )
             ],
