@@ -98,7 +98,7 @@ class HomePage extends StatelessWidget {
                               )
                             ],
                           ),
-                          Icon(Icons.more_vert_rounded)
+                          const Icon(Icons.more_vert_rounded)
                         ],
                       ),
                       const SizedBox(
@@ -126,7 +126,7 @@ class HomePage extends StatelessWidget {
                             width: 5,
                           ),
                           Container(
-                            padding: EdgeInsets.all(8),
+                            padding:const  EdgeInsets.all(8),
                             decoration: ShapeDecoration(
                                 color: Theme.of(context)
                                     .primaryColorLight
@@ -157,9 +157,10 @@ class HomePage extends StatelessWidget {
                 children: [
                   const Expanded(
                       child: TextField(
-                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                    style: TextStyle(fontSize: 20 ),
                     decoration: InputDecoration(
                         filled: true,
+                        contentPadding: EdgeInsets.all(0) ,
                         prefixIcon: Icon(
                           Icons.search,
                           color: Colors.grey,
@@ -167,6 +168,7 @@ class HomePage extends StatelessWidget {
                         hintText: "Search ...",
                         border: OutlineInputBorder(
                             borderSide: BorderSide.none,
+                            
                             borderRadius: BorderRadius.all(
                               Radius.circular(10),
                             ))),
