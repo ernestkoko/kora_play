@@ -20,5 +20,21 @@ abstract class Data{
 
     }
   ];
+ static  final professionals =[{
+    "name": "Dr Ronald Richard",
+    "profession":"Heart Surgeon"
+  },
+    {
+      "name": "Dr Jenny Wilson",
+      "profession":"Dental Specialist"
+    },
+    {
+      "name": "Dr Gilbert Odior",
+      "profession":"Optician"
+    },
+    {
+      "name": "Dr Mabel Rolls",
+      "profession":"Brain Surgeon"
+    }];
 
 }
