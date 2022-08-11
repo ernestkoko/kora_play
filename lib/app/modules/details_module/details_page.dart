@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kora_play/app/modules/details_module/widgets/date_container.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({Key? key}) : super(key: key);
@@ -10,7 +11,9 @@ class DetailsPage extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              left: 0,top: 0,right: 0,
+              left: 0,
+              top: 0,
+              right: 0,
               bottom: MediaQuery.of(context).size.height * 0.09,
               child: ListView(
                 children: [
@@ -35,27 +38,31 @@ class DetailsPage extends StatelessWidget {
                               decoration: ShapeDecoration(
                                   color: Colors.grey.withOpacity(0.6),
                                   shape: const RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(6)))),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(6)))),
                               child: IconButton(
                                   padding: const EdgeInsets.all(0),
                                   onPressed: () {},
-                                  icon: const BackButton(color: Colors.white,)),
+                                  icon: const BackButton(
+                                    color: Colors.white,
+                                  )),
                             ),
                             const Text(
                               "Details",
-                              style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
                             ),
                             Container(
-                              decoration:const  ShapeDecoration(
-
-                                  shape:  RoundedRectangleBorder(
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(6)))),
+                              decoration: const ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(6)))),
                               child: IconButton(
                                   padding: const EdgeInsets.all(0),
                                   onPressed: () {},
-                                  icon:  Icon(
+                                  icon: Icon(
                                     Icons.arrow_back,
                                     color: Theme.of(context).primaryColor,
                                   )),
@@ -144,29 +151,74 @@ class DetailsPage extends StatelessWidget {
                       ],
                     ),
                   ),
-
-
-                 const  Padding(
-                    padding:  EdgeInsets.only(left: 15.0),
-
-                    child: Text("Description", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15.0),
+                    child: Text(
+                      "Description",
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   const Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Text("A dentist is a medical professional hwo specialises in "
+                    padding: EdgeInsets.all(15.0),
+                    child: Text(
+                        "A dentist is a medical professional hwo specialises in "
                         "dentistry, the diagnosis, and treatment of diseases and"
                         " conditions of tooth. This helps to prevent complications "
                         "of the patient's health"),
                   ),
-                  Padding(padding:const  EdgeInsets.all(15.0),child:
-                    Row(
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text("Schedule", style: TextStyle(fontSize: 20),),
-                        Text("<June>", style: TextStyle(fontSize:20,color: Theme.of(context).primaryColor),)
+                        const Text(
+                          "Schedule",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "<June>",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Theme.of(context).primaryColor),
+                        )
                       ],
-                    ),)
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        DateContainer(day: "Sat",date: "12",),
+                        DateContainer(day: "Sun",date: "13",),
+                        DateContainer(
+                          day: "Mon",date: "14",
+                          today: true,
+                        ),
+                        DateContainer(day: "Tue",date: "15",),
+                        DateContainer(day: "Wed",date: "16",),
+                        DateContainer(day: "Thu",date: "17",),
+                      ],
+                    ),
 
+                  ),
+                  const SizedBox(height: 12,),
+                 const  Padding(padding: EdgeInsets.symmetric(horizontal: 15), child:
+                    Text("Location", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),),
+
+                  Container(
+                   height: MediaQuery.of(context).size.height * 0.14,
+                    padding:const  EdgeInsets.symmetric(vertical: 15),
+                    margin:const  EdgeInsets.only(top: 12, left: 15, right: 15),
+                    decoration: ShapeDecoration(
+                      color: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)
+                      )
+                    ),
+
+                  )
                 ],
               ),
             ),
@@ -177,22 +229,29 @@ class DetailsPage extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.08,
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 15),
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              decoration:const  ShapeDecoration(
-                color: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10))
-                )
-              ),
-
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                 Container(),
-               const  Text("Book an appointment", style: TextStyle(color: Colors.white),),
-               const  Icon(Icons.arrow_forward_ios_outlined, color: Colors.white,)
-              ],
-            ),))
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: const ShapeDecoration(
+                      color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10)))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        "Book an appointment",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
+                ))
           ],
         ),
       ),
