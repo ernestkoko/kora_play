@@ -159,7 +159,7 @@ class HomePage extends StatelessWidget {
                                         width: 3,
                                       ),
                                       Text("Sept 18, 2022",
-                                          style: TextStyle(color: Colors.white))
+                                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))
                                     ],
                                   ),
                                 ),
@@ -185,8 +185,8 @@ class HomePage extends StatelessWidget {
                                         width: 3,
                                       ),
                                       Text(
-                                        "Sept 18, 2022",
-                                        style: TextStyle(color: Colors.white),
+                                        "(11Am - 03Pm)",
+                                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),

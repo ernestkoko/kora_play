@@ -20,7 +20,8 @@ class OnboardingPage extends StatelessWidget {
               right: 0,
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.4,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                 decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -31,13 +32,13 @@ class OnboardingPage extends StatelessWidget {
                             MediaQuery.of(context).size.width * 0.5, 50),
                       ),
                     )),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: ListView(
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    SizedBox(
                       height: 100,
                       child: PageView(
                         controller: _pageController,
@@ -79,37 +80,47 @@ class OnboardingPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute<void>(
-                            builder: (context) => HomePage(),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 30),
-                        margin: const EdgeInsets.only(bottom: 20),
-                        decoration: const ShapeDecoration(
-                          color: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Get Started",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    )
                   ],
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                  decoration: const ShapeDecoration(
+                    color: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Get Started",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+
                 ),
               ),
             )
