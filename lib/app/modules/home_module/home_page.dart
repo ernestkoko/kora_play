@@ -31,14 +31,15 @@ class HomePage extends StatelessWidget {
                                 fit: BoxFit.fill,
                                 height: 40,
                                 width: 40,
-                              ))),
+                              ),),),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
-                          Text("Welcome back"),
+                          Text("Welcome back", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
+                          SizedBox(height: 4,),
                           Text(
                             "Nazmul",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                           )
                         ],
                       )
@@ -63,7 +64,7 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  Text("Up Coming Appointment"),
+                  Text("Upcoming Appointment", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                   Text(
                     "See all",
                     style: TextStyle(color: Colors.grey),
@@ -89,16 +90,16 @@ class HomePage extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              const Icon(Icons.person),
+                              const Icon(Icons.person, color: Colors.white,),
                               Column(
                                 children: const [
-                                  Text("Dr Rohul Alom"),
-                                  Text("Tooth, Specialist")
+                                  Text("Dr Rohul Alom", style: TextStyle(color: Colors.white)),
+                                  Text("Tooth, Specialist", style: TextStyle(color: Colors.white))
                                 ],
                               )
                             ],
                           ),
-                          const Icon(Icons.more_vert_rounded)
+                          const Icon(Icons.more_vert_rounded, color: Colors.white,)
                         ],
                       ),
                       const SizedBox(
@@ -117,8 +118,9 @@ class HomePage extends StatelessWidget {
                                         BorderRadius.all(Radius.circular(8)))),
                             child: Row(
                               children: const [
-                                Icon(Icons.calendar_month),
-                                Text("Sept 18, 2022")
+                                Icon(Icons.calendar_month, color: Colors.white,),
+                                SizedBox(width: 3,),
+                                Text("Sept 18, 2022", style: TextStyle(color: Colors.white))
                               ],
                             ),
                           ),
@@ -140,7 +142,8 @@ class HomePage extends StatelessWidget {
                                   Icons.access_time_outlined,
                                   color: Colors.white,
                                 ),
-                                Text("Sept 18, 2022")
+                                SizedBox(width: 3,),
+                                Text("Sept 18, 2022", style: TextStyle(color: Colors.white),)
                               ],
                             ),
                           )
