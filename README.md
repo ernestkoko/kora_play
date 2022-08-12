@@ -4,14 +4,14 @@ Medical app.
 
 ## Getting Started
 
-This is a flutter app.
+## Koraplay is a flutter app.
 
-A few resources to get you started if this is your first Flutter project:
+
 
 - Download [the apk here](apk_folder/app-release.apk)
 
 ## The screens are:
-:kiss_heart:
+
 
 ![Screen 1](images/screen1.png)
 
