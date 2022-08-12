@@ -15,10 +15,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         padding: const EdgeInsets.all(20),
         child: SafeArea(
+
           child: Stack(
+
             children: [
               Positioned(
                 left: 0,
@@ -69,7 +72,7 @@ class HomePage extends StatelessWidget {
                         Container(
                           decoration: ShapeDecoration(
                               color: Colors.grey.shade200,
-                              shape: const RoundedRectangleBorder(
+                              shape: const  RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(
                                 Radius.circular(8),
                               ))),
@@ -97,105 +100,109 @@ class HomePage extends StatelessWidget {
                     const SizedBox(
                       height: 8.0,
                     ),
-                    Card(
-                      elevation: 15,
-                      shadowColor: Theme.of(context).primaryColorDark,
-                      color: Theme.of(context).primaryColor,
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 8.0, top: 15.0, right: 8.0, bottom: 25.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Column(
+                      children: [
+                        Card(
+                          elevation: 15,
+                          shadowColor: Theme.of(context).primaryColorDark,
+                          color: Theme.of(context).primaryColor,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(20))),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                left: 8.0, top: 15.0, right: 8.0, bottom: 25.0),
+                            child: Column(
                               children: [
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    const Icon(
-                                      Icons.person,
-                                      color: Colors.white,
-                                    ),
-                                    Column(
-                                      children: const [
-                                        Text("Dr Rohul Alom",
-                                            style:
-                                                TextStyle(color: Colors.white)),
-                                        Text("Tooth, Specialist",
-                                            style:
-                                                TextStyle(color: Colors.white))
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
+                                        Column(
+                                          children: const [
+                                            Text("Dr Rohul Alom",
+                                                style:
+                                                    TextStyle(color: Colors.white)),
+                                            Text("Tooth, Specialist",
+                                                style:
+                                                    TextStyle(color: Colors.white))
+                                          ],
+                                        )
                                       ],
+                                    ),
+                                    const Icon(
+                                      Icons.more_vert_rounded,
+                                      color: Colors.white,
                                     )
                                   ],
                                 ),
-                                const Icon(
-                                  Icons.more_vert_rounded,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.all(8),
-                                  decoration: ShapeDecoration(
-                                      color: Theme.of(context)
-                                          .primaryColorLight
-                                          .withOpacity(0.2),
-                                      shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(8)))),
-                                  child: Row(
-                                    children: const [
-                                      Icon(
-                                        Icons.calendar_month,
-                                        color: Colors.white,
-                                      ),
-                                      SizedBox(
-                                        width: 3,
-                                      ),
-                                      Text("Sept 18, 2022",
-                                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))
-                                    ],
-                                  ),
-                                ),
                                 const SizedBox(
-                                  width: 5,
+                                  height: 20,
                                 ),
-                                Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: ShapeDecoration(
-                                      color: Theme.of(context)
-                                          .primaryColorLight
-                                          .withOpacity(0.2),
-                                      shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(8)))),
-                                  child: Row(
-                                    children: const [
-                                      Icon(
-                                        Icons.access_time_outlined,
-                                        color: Colors.white,
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding:const  EdgeInsets.all(8),
+                                      decoration: ShapeDecoration(
+                                          color: Theme.of(context)
+                                              .primaryColorLight
+                                              .withOpacity(0.2),
+                                          shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(8)))),
+                                      child: Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.calendar_month,
+                                            color: Colors.white,
+                                          ),
+                                          SizedBox(
+                                            width: 3,
+                                          ),
+                                          Text("Sept 18, 2022",
+                                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))
+                                        ],
                                       ),
-                                      SizedBox(
-                                        width: 3,
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: ShapeDecoration(
+                                          color: Theme.of(context)
+                                              .primaryColorLight
+                                              .withOpacity(0.2),
+                                          shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(8)))),
+                                      child: Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.access_time_outlined,
+                                            color: Colors.white,
+                                          ),
+                                          SizedBox(
+                                            width: 3,
+                                          ),
+                                          Text(
+                                            "(11Am - 03Pm)",
+                                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                          )
+                                        ],
                                       ),
-                                      Text(
-                                        "(11Am - 03Pm)",
-                                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                                      )
-                                    ],
-                                  ),
-                                )
+                                    )
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                     const SizedBox(
                       height: 10,
@@ -204,7 +211,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         const Expanded(
                             child: TextField(
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 14),
                           decoration: InputDecoration(
                               filled: true,
                               contentPadding: EdgeInsets.all(0),
@@ -212,7 +219,8 @@ class HomePage extends StatelessWidget {
                                 Icons.search,
                                 color: Colors.grey,
                               ),
-                              hintText: "Search ...",
+                              hintText: "Search...",
+                              hintStyle: TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius: BorderRadius.all(

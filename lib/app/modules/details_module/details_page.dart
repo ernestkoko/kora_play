@@ -22,9 +22,11 @@ class DetailsPage extends StatelessWidget {
                 child: ListView(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.only(left: 15, top: 15, right: 25, bottom: 15),
                       margin: const EdgeInsets.only(bottom: 25),
+
                       decoration: ShapeDecoration(
+                       
                         color: Theme.of(context).primaryColor,
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
@@ -146,7 +148,7 @@ class DetailsPage extends StatelessWidget {
                               Expanded(
                                 child: Image.asset(
                                   "assets/img/doctor1.jpg",
-                                  fit: BoxFit.contain,
+                                  fit: BoxFit.fill,
                                   scale: 2,
                                 ),
                               ),

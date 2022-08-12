@@ -90,10 +90,11 @@ class OnboardingPage extends StatelessWidget {
               right: 0,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute<void>(
                       builder: (context) => HomePage(),
+
                     ),
                   );
                 },

@@ -37,9 +37,9 @@ class CustomSlidable extends StatelessWidget {
         ),
         child: Container(
           padding: const EdgeInsets.all(10),
-          decoration: const ShapeDecoration(
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
+          decoration:  ShapeDecoration(
+              color: Colors.grey.shade200,
+              shape:const  RoundedRectangleBorder(
                   borderRadius:
                   BorderRadius.all(Radius.circular(10)))),
           child: Row(
@@ -84,7 +84,7 @@ class CustomSlidable extends StatelessWidget {
                             color: Colors.black.withOpacity(0.5)),
                       ),
                       const SizedBox(
-                        width: 3,
+                        width: 8,
                       ),
                       const Icon(
                         Icons.access_time_outlined,

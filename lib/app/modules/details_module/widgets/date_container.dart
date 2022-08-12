@@ -23,8 +23,8 @@ class DateContainer extends StatelessWidget {
         child: Column
           (
           children: [
-            Text(day, style: TextStyle(color:today?Colors.white: Colors.black.withOpacity(0.6)),),
-             Text(date)
+            Text(day, style: TextStyle(color:today?Colors.white.withOpacity(0.6): Colors.black.withOpacity(0.6)),),
+             Text(date, style: TextStyle(color: today? Colors.white: Colors.black, fontWeight: FontWeight.bold),)
           ],
         ),
       ),
